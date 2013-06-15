@@ -12,6 +12,7 @@ public class ProductService extends Service<ProductConfiguration> {
 
     @Override
     public void run(ProductConfiguration productConfiguration, Environment environment) throws Exception {
-
+        environment.addResource(new ProductResource());
+        environment.addHealthCheck(new ProductHealthCheck("product"));
     }
 }
