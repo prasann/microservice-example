@@ -15,4 +15,8 @@ public class ProductService extends Service<ProductConfiguration> {
         environment.addResource(new ProductResource());
         environment.addHealthCheck(new ProductHealthCheck("product"));
     }
+
+    public static void main(String[] args) throws Exception {
+        new ProductService().run(args);
+    }
 }
